@@ -1,9 +1,12 @@
 function setup() {
   createCanvas(400, 400);
+  seedX = random(400);
+  seedY = 0;
 }
 
 function draw() {
   addCatcher(mouseX, 350);
+  dropSeed();
 }
 
 function addCatcher(x, y) {
@@ -29,4 +32,11 @@ function addCatcher(x, y) {
     ellipse(35, 45, 10);
   }
   pop();
+}
+
+function dropSeed() {
+  noStroke;
+  seedY = seedY + 5;
+  fill("crimson");
+  circle(seedX, seedY, 10);
 }
