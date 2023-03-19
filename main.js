@@ -1,8 +1,17 @@
 function setup() {
-  createCanvas(50, 50);
+  createCanvas(400, 400);
+  
 }
 
 function draw() {
+addCatcher(mouseX,350)
+  
+}
+
+function addCatcher(x,y) {
+  push()
+  translate(x,y)
+  background('lightblue')
   noStroke();
   fill("brown");
   ellipse(25, 35, 25);
@@ -11,7 +20,15 @@ function draw() {
   fill("black");
   ellipse(15, 15, 10);
   ellipse(35, 15, 10);
-  fill("orange");
+
+  if (mouseIsPressed) {
+    fill("orange");
+  ellipse(15, 5, 10);
+  ellipse(35, 5, 10);
+  } else {
+   fill("orange");
   ellipse(15, 45, 10);
-  ellipse(35, 45, 10);
+  ellipse(35, 45, 10); 
+  }
+  pop()
 }
