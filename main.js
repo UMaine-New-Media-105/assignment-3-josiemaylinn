@@ -2,17 +2,20 @@ function setup() {
   createCanvas(400, 400);
   seedX = random(400);
   seedY = 0;
+  
+
 }
 
 function draw() {
+  background("lightblue");
   addCatcher(mouseX, 350);
-  dropSeed();
+  dropSeed()
 }
 
 function addCatcher(x, y) {
   push();
   translate(x, y);
-  background("lightblue");
+  
   noStroke();
   fill("brown");
   ellipse(25, 35, 25);
@@ -31,12 +34,18 @@ function addCatcher(x, y) {
     ellipse(15, 45, 10);
     ellipse(35, 45, 10);
   }
+  
   pop();
 }
 
 function dropSeed() {
+
+  if (mouseButton) {
   noStroke;
   seedY = seedY + 5;
   fill("crimson");
   circle(seedX, seedY, 10);
+  }
+
+
 }
